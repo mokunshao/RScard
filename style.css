@@ -115,6 +115,10 @@ a{
 	float:right;
 }
 
+.topNavBar > nav > ul {
+	display: block;
+}
+
 .topNavBar > nav > ul >li {
 	float:left;
 	margin-left: 17px;
@@ -123,7 +127,7 @@ a{
 	padding-top: 5px;
 	padding-bottom: 5px;
 	border-top: 3px solid transparent;
-	border-bottom: :3px solid transparent;
+	border-bottom: 3px solid transparent;
 }
 
 .topNavBar > nav > ul >li >a {
@@ -131,6 +135,7 @@ a{
 	font-weight: bold;
 	color:inherit;
 	display: block;
+	position: relative;
 }
 
 .topNavBar > nav > ul > li.active > a::after{
@@ -161,6 +166,8 @@ a{
 	white-space: nowrap;
 	color: #3d4451;
 	background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    cursor: pointer;
 	animation: submenuSlide 0.3s;
 }
 
