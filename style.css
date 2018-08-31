@@ -317,7 +317,7 @@ hr{
 }
 
 .button:hover{
-	box-shadow: 4px 5px 23px -5px rgba(0,0,0,0.6);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.6);
 }
 
 .buttonWrapper{

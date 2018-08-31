@@ -7,7 +7,7 @@
     <script type="text/javascript" src="https://at.alicdn.com/t/font_451045_32zbfqegtq3t0529.js"></script>
 </head>
 <body>
-    <!-- <div id="welcome" class="active"><div id="loading"></div></div> -->
+    <div id="welcome" class="active"><div id="loading"></div></div>
     <div id="topNavBar" class="topNavBar clearfix">        
         <a href="#" class="logo">
             <span class="rs">RS</span><span class="card">card</span>
@@ -137,17 +137,9 @@
             </ol>
         <div id="bar" class="status1"><div class="bar-inner"></div></div>
         </nav>
-        <script >
-            all.onclick = function(){
-                bar.className = "status1"
-            }
-            frame.onclick = function(){
-                bar.className = "status2"
-            }
-            pure.onclick = function(){
-                bar.className = "status3"
-            }
-        </script>
+
+
+
         <div class="works" style="height: 597px;">
             <div class="big" style="top: 0; left: 0;">
                 <img src="img/1.jpg" alt="作品1">
@@ -161,10 +153,22 @@
         </div>
     </section>
     <script type="text/javascript">
-        // setTimeout(
-        //     function(){welcome.classList.remove("active");},
-        //     1500
-        // )
+        
+        setTimeout(
+            function(){welcome.classList.remove("active");},
+            1500
+        )
+
+        all.onclick = function(){
+            bar.className = "status1"
+        }
+        frame.onclick = function(){
+            bar.className = "status2"
+        }
+        pure.onclick = function(){
+            bar.className = "status3"
+        }
+
 
         window.onscroll=function(){
             if(window.scrollY>0){
@@ -187,7 +191,14 @@
 
         let aTags = document.querySelectorAll("nav>ul>li>a")
         for(let i =0; i<aTags.length; i++){
-            console.log(aTags[i])
+            aTags[i].onclick = function(x){
+                x.preventDefault();
+                let a = x.currentTarget;
+                let href = a.getAttribute("href");
+                let element = document.querySelector(href)
+                let top = element.offsetTop;
+                window.scrollTo(0,top-80);
+            }
         }
 
     </script>
